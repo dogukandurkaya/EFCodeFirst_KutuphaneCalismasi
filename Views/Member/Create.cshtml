@@ -1,0 +1,24 @@
+@model EF_CodeFirst.Models.Entities.Member
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="bg-dark text-danger">Yeni Üye</h1>
+
+<div class="row bg-dark text-danger">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label class="control-label">Üye Ad</label>
+                <input type="text" asp-for="MemberName" class="form-control">
+                <label class="control-label">Üye Soyad</label>
+                <input type="text" asp-for="MemberSurname" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-success">
+            </div>
+        </form>
+    </div>
+</div>
+
+<a asp-action="Index">Üyeler Sayfasına Dön</a>

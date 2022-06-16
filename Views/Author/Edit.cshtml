@@ -1,0 +1,29 @@
+@model EF_CodeFirst.Models.Entities.Author
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="bg-dark text-light">Yazar Bilgileri Düzenle</h1>
+
+<div class="row bg-dark text-light">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div class="form-group">
+                <label class="control-label">Yazar Id</label><br>
+                <label class="control-label" asp-for="AuthorId">@Model.AuthorId</label><br>
+                <input type="hidden" asp-for="AuthorId">
+                <label class="control-label">Yazar Ad</label>
+                <input class="form-control" type="text" asp-for="AuthorName">
+                <label class="control-label">Yazar Soyad</label>
+                <input class="form-control" type="text" asp-for="AuthorSurname">
+                <label class="control-label">Yazar Doğum Tarihi</label>
+                <input class="form-control" type="date" asp-for=" AuthorDateOfBirth">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Değişiklikleri Kaydet" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+
+<a asp-action="Index">Yazar Sayfasına Dön</a>

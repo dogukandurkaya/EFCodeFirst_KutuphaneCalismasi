@@ -1,0 +1,41 @@
+@model List<EF_CodeFirst.Models.Entities.Member>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="bg-dark text-light">Üyeler</h1>
+
+<a asp-action="Create">Yeni Üye Ekle</a>
+
+<table class="table table-dark w-75">
+    <thead>
+        <tr>
+            <th>Üye Id</th>
+            <th>Üye Adı</th>
+            <th>Üye Soyadı</th>
+            <th>Üye Doğum Tarihi</th>
+            <th>Üye Telefon</th>
+            <th>Üye Mail</th>
+            <th>Silinme Durumu</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var uye in Model)
+        {
+            <tr>
+                <td>@uye.MemberId</td>
+                <td>@uye.MemberName</td>
+                <td>@uye.MemberSurname</td>
+                <td>@uye.MemberOfBirth</td>
+                <td>@uye.MemberPhoneNumber</td>
+                <td>@uye.MemberMail</td>
+                <td>@uye.IsDeleted</td>
+                <td class="d-flex">
+                    <a class="btn mx-1 btn-sm btn-success" asp-action="Details" asp-route-id="@uye.MemberId">Detaylar</a>
+                    <a class="btn mx-1 btn-sm btn-warning" asp-action="Edit" asp-route-id="@uye.MemberId">Düzenle</a>
+                    <a class="btn mx-1 btn-sm btn-danger" asp-action="Delete" asp-route-id="@uye.MemberId">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

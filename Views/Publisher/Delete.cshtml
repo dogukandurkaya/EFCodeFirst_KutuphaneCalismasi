@@ -1,0 +1,26 @@
+@model EF_CodeFirst.Models.Entities.Publisher
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="display-3 bg-dark text-light">Yayınevi Sil</h1>
+
+<div class="bg-dark text-light">
+    <h4>Yayınevi</h4>
+    <h5>Yayınevi ID: </h5>
+    <p>@Model.PublisherId</p>
+    <h5>Yayınevi Ad</h5>
+    <p>@Model.PublisherName</p>
+    <h5>Yayınevi Şehri</h5>
+    <p>@Model.PublisherCity</p>
+    <h5>Silinme Durumu</h5>
+    <p>@Model.IsDeleted</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="PublisherId">
+    <input type="submit" value="Yayınevi Sil" class="btn btn-danger">
+</form>
+
+
+<a asp-action="Index">Yayınevi Sayfasına Dön</a>

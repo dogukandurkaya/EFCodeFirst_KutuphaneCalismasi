@@ -1,0 +1,22 @@
+@model EF_CodeFirst.Models.Entities.Author
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="bg-dark text-light">Yazar Bilgisi Detayları</h1>
+
+<div class="bg-dark text-light">
+    <h4>Yazar</h4>
+    <h5>Yazar ID: </h5>
+    <p class="text-light">@Model.AuthorId</p>
+    <h5>Yazar Adı</h5>
+    <p class="text-light">@Model.AuthorName</p>
+    <h5>Yazar Soyadı</h5>
+    <p class="text-light">@Model.AuthorSurname</p>
+    <h5>Yazar Doğum Tarihi</h5>
+    <p class="text-light">@Model.AuthorDateOfBirth</p>
+    <h5>Silinme Durumu</h5>
+    <p class="text-light">@Model.IsDeleted</p>
+</div>
+
+<a asp-action="Index">Yazarlar Sayfasına Dön</a>

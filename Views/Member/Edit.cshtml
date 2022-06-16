@@ -1,0 +1,27 @@
+@model EF_CodeFirst.Models.Entities.Member
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="bg-dark text-light">Üyeler Bilgisi Düzenle</h1>
+
+<div class="row bg-dark text-light">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+             <div class="form-group">
+                <label class="control-label">Üye Id</label>
+                <label class="control-label" asp-for="MemberId">@Model.MemberId</label><br>
+                <input type="hidden" asp-for="MemberId">
+                <label class="control-label">Üye Adı</label>
+                <input class="form-control" type="text" asp-for="MemberName">
+                  <label class="control-label">Üye Soyadı</label>
+                <input class="form-control" type="text" asp-for="MemberSurname">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Değişiklikleri Kaydet" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+
+<a asp-action="Index">Üyeler Sayfasına Dön</a>

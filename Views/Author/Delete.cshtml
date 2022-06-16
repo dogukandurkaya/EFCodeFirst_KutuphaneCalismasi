@@ -1,0 +1,26 @@
+@model EF_CodeFirst.Models.Entities.Author
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="display-3 bg-dark text-light">Yazar Bilgisi Sil</h1>
+
+<div class="bg-dark text-light">
+    <h4>Yazar</h4>
+    <h5>Yazar ID: </h5>
+    <p>@Model.AuthorId</p>
+    <h5>Yazar Ad</h5>
+    <p>@Model.AuthorName</p>
+    <h5>Yazar Soyad</h5>
+    <p>@Model.AuthorSurname</p>
+    <h5>Silinme Durumu</h5>
+    <p>@Model.IsDeleted</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="AuthorId">
+    <input type="submit" value="Yazar Sil" class="btn btn-danger">
+</form>
+
+
+<a asp-action="Index">Yazar Sayfasına Dön</a>

@@ -1,0 +1,26 @@
+@model EF_CodeFirst.Models.Entities.Member
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="display-3 bg-dark text-light">Kategori Türü Sil</h1>
+
+<div class="bg-dark text-light">
+    <h4>Üye</h4>
+    <h5>Üye ID: </h5>
+    <p>@Model.MemberId</p>
+    <h5>Üye Ad</h5>
+    <p>@Model.MemberName</p>
+    <h5>Üye Soyad</h5>
+    <p>@Model.MemberSurname</p>
+    <h5>Silinme Durumu</h5>
+    <p>@Model.IsDeleted</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="MemberId">
+    <input type="submit" value="Üye Sil" class="btn btn-danger">
+</form>
+
+
+<a asp-action="Index">Üyeler Sayfasına Dön</a>

@@ -1,0 +1,20 @@
+@model EF_CodeFirst.Models.Entities.Publisher
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="bg-dark text-light">Yayınevi Detayları</h1>
+
+<div class="bg-dark text-light">
+    <h4>Yayınevi</h4>
+    <h5>Yayınevi ID: </h5>
+    <p>@Model.PublisherId</p>
+    <h5>Yayınevi Ad</h5>
+    <p>@Model.PublisherName</p>
+    <h5>Yayınevi Şehri</h5>
+    <p>@Model.PublisherCity</p>
+    <h5>Silinme Durumu</h5>
+    <p>@Model.IsDeleted</p>
+</div>
+
+<a asp-action="Index">Yayınevi Sayfasına Dön</a>

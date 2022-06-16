@@ -1,0 +1,24 @@
+@model EF_CodeFirst.Models.Entities.Book
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="display-3 bg-dark text-light">Kitap Sil</h1>
+
+<div class="bg-dark text-light">
+    <h4>Kitap</h4>
+    <h5>Kitap ID: </h5>
+    <p>@Model.BookId</p>
+    <h5>Kitap Adı</h5>
+    <p>@Model.BookName</p>
+    <h5>Silinme Durumu</h5>
+    <p>@Model.IsDeleted</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="CategoryId">
+    <input type="submit" value="Kitap Sil" class="btn btn-danger">
+</form>
+
+
+<a asp-action="Index">Kitaplar Sayfasına Dön</a>
